@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.navigationapp.R
+import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_second.*
 
 class SecondFragment : Fragment() {
@@ -29,7 +30,8 @@ class SecondFragment : Fragment() {
         Toast.makeText(context, "the value for argument name is $name", Toast.LENGTH_SHORT).show()
 
         btnBackFirst.setOnClickListener {
-            view.findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
+            val action = SecondFragmentDirections.navigateToFirstFragment()
+            view.findNavController().navigate(action)
         }
 
     }

@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_second.*
 
 class SecondFragment : Fragment() {
 
-    val args: SecondFragmentArgs by navArgs()
+    private val args: SecondFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,8 +26,7 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val name = args.name
-        Toast.makeText(context, "the value for argument name is $name", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "the value for argument name is ${args.name}", Toast.LENGTH_SHORT).show()
 
         btnBackFirst.setOnClickListener {
             val action = SecondFragmentDirections.navigateToFirstFragment()

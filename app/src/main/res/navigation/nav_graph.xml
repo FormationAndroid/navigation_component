@@ -11,7 +11,7 @@
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" >
         <action
-            android:id="@+id/action_firstFragment_to_secondFragment"
+            android:id="@+id/navigateToSecondFragment"
             app:destination="@id/secondFragment"
             app:launchSingleTop="false"
             app:popUpToInclusive="false" />
@@ -26,6 +26,10 @@
             app:destination="@id/firstFragment"
             app:popUpTo="@id/firstFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="" />
     </fragment>
 
 </navigation>

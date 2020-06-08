@@ -22,7 +22,8 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnGoSecond.setOnClickListener {
-            view.findNavController().navigate(R.id.action_firstFragment_to_secondFragment)
+            val action = FirstFragmentDirections.navigateToSecondFragment(name = editName.text.toString())
+            view.findNavController().navigate(action)
         }
     }
 
